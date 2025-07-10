@@ -6,7 +6,7 @@ function App() {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    const ws = new WebSocket('ws://localhost:4000');
+    const ws = new WebSocket('wss://bourse-analyse.onrender.com');
     ws.onmessage = (event) => {
       const { symbol, price, time } = JSON.parse(event.data);
       setData(prev => ({

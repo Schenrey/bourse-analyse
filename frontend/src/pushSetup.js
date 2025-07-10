@@ -2,7 +2,7 @@ export async function subscribeToPush() {
     if (!('serviceWorker' in navigator)) return;
   
     const swReg = await navigator.serviceWorker.ready;
-    const response = await fetch('http://localhost:4000/vapidPublicKey');
+    const response = await fetch('https://bourse-analyse.onrender.com/vapidPublicKey');
     const vapidPublicKey = await response.text();
   
     const convertedKey = urlBase64ToUint8Array(vapidPublicKey);
@@ -13,7 +13,7 @@ export async function subscribeToPush() {
         applicationServerKey: convertedKey
       });
   
-      await fetch('http://localhost:4000/subscribe', {
+      await fetch('https://bourse-analyse.onrender.com/subscribe', {
         method: 'POST',
         body: JSON.stringify(subscription),
         headers: { 'Content-Type': 'application/json' }
