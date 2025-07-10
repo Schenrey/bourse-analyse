@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bourse Analyse</title>
+  </head>
+  <body>
+    <noscript>Activez JavaScript pour utiliser cette application.</noscript>
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(() => console.log('✅ Service worker enregistré'))
+            .catch(err => console.error('❌ SW registration failed:', err));
+        });
+      }
+    </script>
+  </body>
+</html>
