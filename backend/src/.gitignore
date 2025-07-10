@@ -1,3 +1,8 @@
+# Ne jamais suivre les dépendances
 node_modules/
+
+# Ne jamais suivre les fichiers d'environnement
 .env
+
+# Divers
 .DS_Store
